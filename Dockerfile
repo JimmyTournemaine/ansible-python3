@@ -8,6 +8,7 @@
 #
 FROM centos:7 as builder
 RUN yum -y update \
+&& yum -y install sudo
 && yum -y install python3 openssh-clients sshpass\
 && pip3 install virtualenv \
 && adduser -m -r -s /bin/bash -U ansible \
