@@ -14,6 +14,7 @@ FROM builder
 USER ansible
 RUN python3 -m venv /opt/ansible-venv \
 && echo 'source /opt/ansible-venv/bin/activate' >> ~/.bashrc \
+&& echo 'export LANG=en_US.UTF-8' >> ~/.bashrc \
 && source /opt/ansible-venv/bin/activate \
 && pip install --upgrade pip ansible ansible-lint \
 && python --version; pip --version; ansible --version; ansible-lint --version 
